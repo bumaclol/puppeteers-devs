@@ -1684,7 +1684,6 @@ img {
   }
 
   .contact-col {
-    container-type: size;
     overflow: visible;
   }
 
@@ -1693,11 +1692,22 @@ img {
   }
 
   .contact-fit {
-    width: min(100cqi, calc(100cqh * 865 / 1024));
-    height: min(100cqh, calc(100cqi * 1024 / 865));
+    height: 100%;
+    width: max-content;
     max-width: 100%;
     max-height: 100%;
-    aspect-ratio: 865 / 1024;
+    aspect-ratio: auto;
+  }
+
+  .contact-board {
+    position: static;
+    inset: auto;
+    display: block;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: fill;
   }
 
   .board-form {
