@@ -1570,6 +1570,9 @@ img {
 
   .board-form label {
     gap: 2px;
+  }
+
+  .board-form label:not(.board-msg) {
     flex-shrink: 0;
   }
 
@@ -1583,7 +1586,7 @@ img {
   .board-form textarea {
     flex: 1 1 auto;
     height: auto;
-    min-height: 0;
+    min-height: 52px;
     max-height: none;
     overflow-y: auto;
   }
@@ -1657,8 +1660,49 @@ img {
   }
 
   .board-form {
-    gap: 3px;
-    padding: 2px 6px 7px 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto minmax(68px, 1fr) auto;
+    top: 45%;
+    height: 48.5%;
+    max-height: 48.5%;
+    gap: 4px;
+    padding: 4px 7px 10px 6px;
+    overflow: hidden;
+  }
+
+  .board-form h2 {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    margin: 0;
+  }
+
+  .board-form label span {
+    font-size: 10px;
+    line-height: 1.1;
+  }
+
+  .board-form .board-msg {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .board-form textarea {
+    min-height: 0;
+    flex: 1 1 auto;
+    height: 100%;
+  }
+
+  .board-form input {
+    min-height: 26px;
+  }
+
+  .board-form .send {
+    height: 30px;
+    min-height: 30px;
+    margin-top: 0;
+    letter-spacing: 0.12em;
   }
 
   .board-form h2 {
