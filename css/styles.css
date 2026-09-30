@@ -14,15 +14,16 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   margin: 0;
   min-height: 100%;
-  height: 100%;
+  height: auto;
 }
 
 body {
-  min-height: 100vh;
+  margin: 0;
+  min-height: 100dvh;
+  height: auto;
   display: flex;
   flex-direction: column;
   background: #000;
@@ -426,8 +427,8 @@ img {
   gap: 10px 40px;
   padding: 8px 0 24px var(--gutter);
   align-items: stretch;
-  flex: 1 1 0%;
-  min-height: 0;
+  flex: 1 0 auto;
+  min-height: calc(100dvh - 13rem);
   overflow: visible;
   position: relative;
   z-index: 1;
@@ -441,7 +442,7 @@ img {
   grid-column: 1;
   grid-row: 2;
   font-family: "Bebas Neue", "Oswald", sans-serif;
-  font-size: clamp(68px, 8.6vw, 124px);
+  font-size: clamp(44px, 7vw, 110px);
   font-weight: 400;
   line-height: 0.88;
   letter-spacing: 0.02em;
@@ -928,13 +929,13 @@ img {
   bottom: 0;
   left: auto;
   right: 0;
-  height: 114%;
+  height: 100%;
   width: auto;
-  max-width: none;
-  max-height: none;
+  max-width: 100%;
+  max-height: 100%;
   margin: 0;
   aspect-ratio: 865 / 1024;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
   transform: none;
   transform-origin: right bottom;
@@ -1266,12 +1267,12 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 22px 28px;
-  padding: 32px var(--gutter) 36px;
-  min-height: 112px;
-  font-size: 26px;
+  padding: clamp(16px, 2.4vw, 32px) var(--gutter) clamp(18px, 2.6vw, 36px);
+  min-height: 0;
+  font-size: clamp(13px, 1.4vw, 22px);
   color: #d4c8bc;
   position: relative;
-  z-index: 1;
+  z-index: 4;
   margin-top: auto;
   flex-shrink: 0;
   border-top: 1px solid rgba(196, 168, 132, 0.22);
@@ -1302,8 +1303,8 @@ img {
 .socials a {
   display: grid;
   place-items: center;
-  width: 74px;
-  height: 64px;
+  width: clamp(44px, 4.2vw, 74px);
+  height: clamp(44px, 3.8vw, 64px);
   color: #fff;
   position: relative;
 }
@@ -1323,14 +1324,14 @@ img {
 }
 
 .socials svg {
-  width: 36px;
-  height: 36px;
+  width: clamp(22px, 2.1vw, 36px);
+  height: clamp(22px, 2.1vw, 36px);
 }
 
 .patreon-mark {
   display: block;
-  width: 36px;
-  height: 36px;
+  width: clamp(22px, 2.1vw, 36px);
+  height: clamp(22px, 2.1vw, 36px);
   object-fit: contain;
   transform: scale(1.75);
   filter: brightness(0) invert(1);
@@ -1349,11 +1350,12 @@ img {
   font-size: inherit;
   letter-spacing: 0.01em;
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .mail-icon {
-  width: 28px;
-  height: 28px;
+  width: clamp(18px, 1.6vw, 28px);
+  height: clamp(18px, 1.6vw, 28px);
   display: block;
   flex-shrink: 0;
   color: #fff;
@@ -1422,7 +1424,7 @@ img {
   max-width: 560px;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1100px), (max-height: 680px) {
   .home,
   .game-card-row,
   .game-card,
@@ -1439,8 +1441,10 @@ img {
   .home {
     flex: 1 0 auto;
     height: auto;
-    padding: 0 16px 24px;
+    min-height: 0;
+    padding: 0 16px 28px;
     overflow: visible;
+    gap: 16px;
   }
 
   .home > .intro {
@@ -1455,8 +1459,14 @@ img {
     grid-row: auto;
   }
 
+  .hero-title {
+    font-size: clamp(40px, 10vw, 72px);
+    line-height: 0.92;
+  }
+
   .game-card.featured {
     max-width: none;
+    padding: 88px 16px 36px;
   }
 
   .game-card.featured .game-art {
@@ -1473,8 +1483,12 @@ img {
   }
 
   .top {
-    padding: 28px 12px 12px;
+    padding: 48px 12px 16px;
     gap: 8px;
+  }
+
+  .home {
+    padding-top: 12px;
   }
 
   .nav-box {
@@ -1486,17 +1500,24 @@ img {
     width: 88px;
   }
 
+  .logo-hint {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
   .contact-col {
-    margin-top: 0;
+    margin-top: 8px;
     overflow: visible;
     padding: 0;
+    min-height: 0;
   }
 
   .contact-stage {
     position: relative;
-    width: 100%;
-    max-width: 460px;
+    width: min(100%, 480px);
     height: auto;
+    max-width: 480px;
+    max-height: none;
     top: auto;
     bottom: auto;
     left: auto;
@@ -1505,10 +1526,99 @@ img {
     aspect-ratio: 865 / 1024;
     pointer-events: auto;
     transform: none;
+    overflow: visible;
+  }
+
+  .board-form {
+    left: 11%;
+    top: 41.5%;
+    width: 46%;
+    height: 53%;
+  }
+
+  .board-form h2 {
+    font-size: clamp(15px, 4.2vw, 20px);
+    margin: 0 0 6px;
+  }
+
+  .board-form input,
+  .board-form textarea {
+    min-height: 34px;
+    font-size: 16px;
+    padding: 7px 8px;
+  }
+
+  .board-form textarea {
+    min-height: 72px;
+  }
+
+  .board-form .send {
+    height: 40px;
+    margin-top: 8px;
+    font-size: 13px;
   }
 
   .lang-switch {
     top: 8px;
     right: 8px;
+  }
+
+  .foot {
+    flex-wrap: wrap;
+    row-gap: 16px;
+  }
+
+  .mail {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: clamp(34px, 12vw, 52px);
+  }
+
+  .logo-hint {
+    display: none !important;
+  }
+
+  .top {
+    padding-top: max(52px, calc(12px + env(safe-area-inset-top)));
+  }
+
+  .game-card.featured {
+    padding: 28px 14px 24px;
+  }
+
+  .foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+
+  .lang-dd-btn {
+    min-width: 0;
+    padding: 6px 8px;
+  }
+
+  .lang-dd-label {
+    display: none;
+  }
+}
+
+@media (min-width: 1101px) and (min-height: 901px) {
+  .home {
+    min-height: calc(100dvh - 13rem);
+  }
+
+  .contact-stage {
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
   }
 }
