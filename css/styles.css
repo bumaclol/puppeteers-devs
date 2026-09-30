@@ -465,6 +465,9 @@ img {
   line-height: 1.45;
   font-size: clamp(18px, 1.7vw, 22px);
   margin: 0 0 28px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .game-card {
@@ -793,6 +796,9 @@ img {
   color: #d5cdc6;
   font-size: 13px;
   line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .game-card.featured .game-copy {
@@ -1385,6 +1391,9 @@ img {
   font-size: 14px;
   line-height: 1.5;
   margin: 12px 0 16px;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .newsletter-form {
@@ -1530,32 +1539,48 @@ img {
   }
 
   .board-form {
-    left: 11%;
-    top: 41.5%;
-    width: 46%;
-    height: 53%;
+    left: 10%;
+    top: 40%;
+    width: 50%;
+    height: auto;
+    max-height: none;
+    bottom: auto;
+    gap: 5px;
+    padding: 4px 8px 10px 6px;
+    overflow: visible;
+  }
+
+  .board-form .board-msg {
+    flex: 0 0 auto;
+    min-height: 0;
   }
 
   .board-form h2 {
     font-size: clamp(15px, 4.2vw, 20px);
-    margin: 0 0 6px;
+    margin: 0 0 4px;
   }
 
   .board-form input,
   .board-form textarea {
-    min-height: 34px;
+    min-height: 32px;
     font-size: 16px;
-    padding: 7px 8px;
+    padding: 6px 8px;
   }
 
   .board-form textarea {
-    min-height: 72px;
+    flex: none;
+    height: 56px;
+    min-height: 56px;
+    max-height: 56px;
   }
 
   .board-form .send {
-    height: 40px;
-    margin-top: 8px;
+    position: relative;
+    z-index: 3;
+    height: 38px;
+    margin-top: 6px;
     font-size: 13px;
+    flex-shrink: 0;
   }
 
   .lang-switch {
@@ -1608,6 +1633,29 @@ img {
 
   .lang-dd-label {
     display: none;
+  }
+
+  .board-form {
+    left: 8%;
+    top: 38.5%;
+    width: 56%;
+    height: auto;
+    gap: 4px;
+  }
+
+  .board-form label {
+    gap: 2px;
+  }
+
+  .board-form textarea {
+    height: 48px;
+    min-height: 48px;
+    max-height: 48px;
+  }
+
+  .board-form .send {
+    height: 36px;
+    margin-top: 4px;
   }
 }
 
