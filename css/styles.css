@@ -1553,7 +1553,10 @@ img {
     bottom: auto;
     gap: 4px;
     padding: 2px 7px 8px 6px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.35);
   }
 
   .board-form .board-msg {
@@ -1660,21 +1663,42 @@ img {
   }
 
   .board-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto minmax(68px, 1fr) auto;
-    top: 45%;
-    height: 48.5%;
-    max-height: 48.5%;
-    gap: 4px;
-    padding: 4px 7px 10px 6px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    top: 44.5%;
+    height: 50.5%;
+    max-height: 50.5%;
+    gap: 6px;
+    padding: 6px 8px 10px 6px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.55) rgba(0, 0, 0, 0.35);
+  }
+
+  .board-form::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .board-form::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 99px;
+  }
+
+  .board-form::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 99px;
   }
 
   .board-form h2 {
     font-size: 12px;
     letter-spacing: 0.08em;
     margin: 0;
+    flex-shrink: 0;
   }
 
   .board-form label span {
@@ -1683,31 +1707,17 @@ img {
   }
 
   .board-form .board-msg {
+    flex: 0 0 auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
   }
 
   .board-form textarea {
-    min-height: 0;
-    flex: 1 1 auto;
-    height: 100%;
-  }
-
-  .board-form input {
-    min-height: 26px;
-  }
-
-  .board-form .send {
-    height: 30px;
-    min-height: 30px;
-    margin-top: 0;
-    letter-spacing: 0.12em;
-  }
-
-  .board-form h2 {
-    font-size: 13px;
-    letter-spacing: 0.08em;
+    min-height: 96px;
+    height: 96px;
+    flex: 0 0 auto;
+    overflow-y: auto;
   }
 
   .board-form input {
@@ -1717,7 +1727,8 @@ img {
   .board-form .send {
     height: 32px;
     min-height: 32px;
-    margin-top: 3px;
+    margin-top: 2px;
+    flex-shrink: 0;
     letter-spacing: 0.12em;
   }
 }
