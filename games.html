@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' mailto: https://api.web3forms.com https://dashboard.mailerlite.com https://assets.mailerlite.com; script-src 'self' 'unsafe-inline' https://assets.mailerlite.com https://dashboard.mailerlite.com https://connect.mailerlite.com https://groot.mailerlite.com https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.mailerlite.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https://flagcdn.com https://assets.mailerlite.com https://storage.mailerlite.com; connect-src 'self' https://api.web3forms.com https://assets.mailerlite.com https://dashboard.mailerlite.com https://connect.mailerlite.com https://groot.mailerlite.com https://storage.mailerlite.com; frame-src https://www.google.com https://assets.mailerlite.com; upgrade-insecure-requests"
+    />
+    <title>Our Games — Puppeteers Devs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css?v=145" />
+    <script>
+      (function (w, d, e, u, f, l, n) {
+        w[f] =
+          w[f] ||
+          function () {
+            (w[f].q = w[f].q || []).push(arguments);
+          };
+        l = d.createElement(e);
+        l.async = 1;
+        l.src = u;
+        n = d.getElementsByTagName(e)[0];
+        n.parentNode.insertBefore(l, n);
+      })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml");
+      ml("account", "2624441");
+    </script>
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true">
+      <svg class="grain-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 135" preserveAspectRatio="none">
+        <filter id="tv-static" x="0%" y="0%" width="100%" height="100%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="1" seed="3" stitchTiles="stitch">
+            <animate attributeName="seed" values="1;8;3;12;5;9;2;11;6;4;10;7" dur="0.22s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feColorMatrix type="saturate" values="0" />
+          <feComponentTransfer>
+            <feFuncR type="discrete" tableValues="0 0 0 0.08 0.16 0.26" />
+            <feFuncG type="discrete" tableValues="0 0 0 0.08 0.16 0.26" />
+            <feFuncB type="discrete" tableValues="0 0 0 0.08 0.16 0.26" />
+          </feComponentTransfer>
+        </filter>
+        <rect width="240" height="135" filter="url(#tv-static)" />
+      </svg>
+    </div>
+    <div class="lang-switch" aria-label="Language"></div>
+    <header class="top">
+      <div class="logo-wrap">
+        <button type="button" class="logo" aria-expanded="false" aria-controls="logoNews">
+          <img src="img/logo-puppeteers.png?v=2" alt="" />
+        </button>
+        <p class="logo-hint" aria-hidden="true" data-i18n="logo.hint">Aprieta aquí</p>
+        <div class="logo-pop" id="logoNews" hidden>
+          <p class="logo-pop-title" data-i18n="logo.newsletter">Suscríbete a nuestro newsletter</p>
+          <form class="newsletter-form">
+            <input type="hidden" name="ml-submit" value="1" />
+            <input type="hidden" name="anticsrf" value="true" />
+            <input
+              type="email"
+              name="fields[email]"
+              required
+              autocomplete="email"
+              maxlength="120"
+              data-i18n-placeholder="newsletter.placeholder"
+              placeholder="Tu correo"
+            />
+            <button class="send newsletter-send" type="submit">
+              <span data-i18n="newsletter.send">SUSCRIBIRSE</span>
+            </button>
+          </form>
+          <p class="ok newsletter-ok" hidden data-i18n="newsletter.ok">
+            Listo, ya estás dentro. Te avisamos cuando haya novedades.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <h1 data-i18n="games.title">OUR GAMES</h1>
+      <p class="lead" data-i18n="games.lead">Things we built. Things that still twitch.</p>
+      <article class="game-card wide title-art">
+        <div class="game-art">
+          <img src="img/puppetsite.png" alt="PUPPETSITE" />
+        </div>
+        <div class="game-copy">
+          <h2>PUPPETSITE</h2>
+          <p class="status" data-i18n="game.status">coming soon</p>
+          <p data-i18n="game.blurb">
+            Puppetsite es un juego de terror psicológico narrativo. Un
+            inquietante títere se aferra a tu brazo. Encuentra la forma de
+            liberarte... pero no lo despiertes. Podría ser el fin para ti.
+          </p>
+          <div class="stores">
+            <div class="store-links">
+              <a class="press-kit-link" href="https://puppetsite.carrd.co/" target="_blank" rel="noopener noreferrer">Press Kit</a>
+              <a href="https://store.steampowered.com/app/3275410/Puppetsite/" target="_blank" rel="noopener noreferrer">Steam</a>
+              <a href="https://puppeteers.itch.io/puppetsite" target="_blank" rel="noopener noreferrer">itch.io</a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!--
+        TUTORIAL: agregar un juego nuevo
+        1. Pon la portada en la carpeta img/ (ejemplo: img/mi-juego.png).
+        2. Copia el article de PUPPETSITE que esta arriba y pegalo debajo de este comentario.
+        3. Cambia la imagen (src y alt), el titulo h2, el texto y los links de Itch/Steam.
+        4. NO uses data-i18n="game.blurb" ni data-i18n="game.status" en el juego nuevo:
+           esas claves son de Puppetsite. O deja el texto fijo, o crea claves nuevas
+           (game2.blurb, game2.status) en js/main.js, en ingles (en) y espanol (es).
+        5. Si este juego es el mas reciente, reemplaza tambien la tarjeta de
+           index.html (el article.game-card del inicio).
+        6. Recarga el navegador. Si la web ya esta publicada, vuelve a subir la carpeta.
+
+        Ejemplo para pegar (quita estas lineas de comentario HTML):
+
+        <article class="game-card wide title-art">
+          <div class="game-art">
+            <img src="img/mi-juego.png" alt="NOMBRE DEL JUEGO" />
+          </div>
+          <div class="game-copy">
+            <h2>NOMBRE DEL JUEGO</h2>
+            <p class="status">proximamente</p>
+            <p>Escribe aqui la descripcion del juego.</p>
+            <div class="stores">
+              <div class="store-links">
+                <a href="https://TU-PAGINA-ITCH" target="_blank" rel="noopener noreferrer">Itch.io</a>
+                <a href="https://TU-PAGINA-STEAM" target="_blank" rel="noopener noreferrer">Steam</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      -->
+    </main>
+
+    <footer class="foot">
+      <div class="foot-copy">
+        <p>Puppeteers Devs © 2026</p>
+        <p class="foot-credit"><span data-i18n="footer.made">Página creada por</span> Pomp</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/puppeteers.devs/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm-5 3.2A3.8 3.8 0 1 1 8.2 12 3.8 3.8 0 0 1 12 8.2zm0 2A1.8 1.8 0 1 0 13.8 12 1.8 1.8 0 0 0 12 10.2zM17.2 6.6a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9z"/></svg>
+        </a>
+        <a href="https://discord.gg/rgE8m5H9j" target="_blank" rel="noopener noreferrer" aria-label="Discord">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.32 4.37a19.8 19.8 0 0 0-4.89-1.52.07.07 0 0 0-.08.04c-.21.37-.44.86-.61 1.25a18.27 18.27 0 0 0-5.48 0 12.6 12.6 0 0 0-.62-1.25.08.08 0 0 0-.08-.04 19.74 19.74 0 0 0-4.88 1.52.07.07 0 0 0-.03.03C.53 9.05-.32 13.58.1 18.06a.08.08 0 0 0 .03.06 19.9 19.9 0 0 0 6 3.03.08.08 0 0 0 .08-.03c.36-.7.77-1.36 1.23-2 .02-.03 0-.07-.04-.1a13.1 13.1 0 0 1-1.87-.9.08.08 0 0 1-.01-.13c.12-.1.25-.2.37-.29a.07.07 0 0 1 .08-.01c3.93 1.8 8.18 1.8 12.06 0a.07.07 0 0 1 .08.01c.12.1.25.2.37.29a.08.08 0 0 1 0 .13 12.3 12.3 0 0 1-1.87.89.08.08 0 0 0-.04.11c.36.7.77 1.36 1.22 2a.08.08 0 0 0 .08.03 19.84 19.84 0 0 0 6-3.03.08.08 0 0 0 .03-.05c.5-5.18-.84-9.67-3.55-13.66a.06.06 0 0 0-.03-.03zM8.02 15.33c-1.18 0-2.16-1.09-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.33-.96 2.42-2.16 2.42zm7.97 0c-1.18 0-2.16-1.09-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.33-.95 2.42-2.16 2.42z"/></svg>
+        </a>
+        <a href="https://x.com/PuppeteersDevs" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.244 2H21.5l-7.5 8.57L22.5 22h-6.59l-5.16-6.74L5.2 22H1.94l8.03-9.17L1.5 2h6.76l4.66 6.17L18.244 2zm-1.16 18.06h1.8L7.01 3.84H5.08l12 16.22z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@PuppeteersDevs" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.87.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/puppeteers-devs" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.5 9H3.7v11.2h2.8V9zM5.1 3.6A1.7 1.7 0 1 0 5.1 7a1.7 1.7 0 0 0 0-3.4zM20.3 13.2c0-3.4-1.8-5-4.2-5-1.9 0-2.8 1-3.3 1.8V9H10v11.2h2.8v-6.2c0-1.6.3-3.2 2.3-3.2s2.1 1.7 2.1 3.3v6.1h2.8V13.2z"/></svg>
+        </a>
+        <a href="https://www.patreon.com/c/Puppeteers" target="_blank" rel="noopener noreferrer" aria-label="Patreon">
+          <img class="patreon-mark" src="img/patreon.png" alt="" />
+        </a>
+      </div>
+      <a class="mail" href="mailto:puppeteers.devs@gmail.com">
+        <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.2" y="6.2" width="17.6" height="12.2" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.7" />
+          <path d="M4.1 7.4 12 13.1 19.9 7.4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        puppeteers.devs@gmail.com
+      </a>
+    </footer>
+    <script src="js/main.js?v=37"></script>
+  </body>
+</html>
