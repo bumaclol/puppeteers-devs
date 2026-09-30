@@ -70,10 +70,11 @@ img {
 }
 
 .lang-switch {
-  position: absolute;
+  position: fixed;
   top: max(10px, env(safe-area-inset-top));
   right: max(10px, env(safe-area-inset-right));
   z-index: 400;
+  pointer-events: auto;
 }
 
 .lang-dd {
@@ -1613,6 +1614,7 @@ img {
   }
 
   .lang-switch {
+    position: fixed;
     top: max(8px, env(safe-area-inset-top));
     right: max(8px, env(safe-area-inset-right));
   }
