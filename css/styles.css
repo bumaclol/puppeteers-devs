@@ -18,6 +18,8 @@ html {
   margin: 0;
   min-height: 100%;
   height: auto;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -29,7 +31,7 @@ body {
   background: #000;
   color: var(--ink);
   font-family: "IBM Plex Sans", system-ui, sans-serif;
-  overflow-x: hidden;
+  overflow-x: visible;
 }
 
 a {
@@ -64,9 +66,11 @@ img {
 
 .lang-switch {
   position: fixed;
-  top: 16px;
-  right: 12px;
-  z-index: 80;
+  top: max(10px, env(safe-area-inset-top));
+  right: max(10px, env(safe-area-inset-right));
+  z-index: 400;
+  transform: none;
+  inset-inline-end: max(10px, env(safe-area-inset-right));
 }
 
 .lang-dd {
@@ -1606,8 +1610,9 @@ img {
   }
 
   .lang-switch {
-    top: 8px;
-    right: 8px;
+    position: fixed;
+    top: max(8px, env(safe-area-inset-top));
+    right: max(8px, env(safe-area-inset-right));
   }
 
   .foot {
