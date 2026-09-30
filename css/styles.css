@@ -1678,14 +1678,33 @@ img {
   }
 }
 
-@media (min-width: 1101px) and (min-height: 901px) {
+@media (min-width: 1101px) {
   .home {
-    min-height: calc(100dvh - 13rem);
+    min-height: calc(100dvh - 14rem);
+  }
+
+  .contact-col {
+    container-type: size;
+    overflow: visible;
+  }
+
+  .contact-stage {
+    overflow: visible;
   }
 
   .contact-fit {
-    height: 100%;
-    max-height: 100%;
+    width: min(100cqi, calc(100cqh * 865 / 1024));
+    height: min(100cqh, calc(100cqi * 1024 / 865));
     max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 865 / 1024;
+  }
+
+  .board-form {
+    left: 13.4%;
+    top: 45.6%;
+    width: 38.6%;
+    height: 46.2%;
+    max-height: none;
   }
 }
