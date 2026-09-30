@@ -617,3 +617,25 @@ applyLang();
     });
   });
 })();
+
+(function keepLanguageSwitchOnScreen() {
+  const el = document.querySelector(".lang-switch");
+  if (!el) return;
+
+  const pad = 10;
+  const pin = () => {
+    const vv = window.visualViewport;
+    const pageTop = vv && Number.isFinite(vv.pageTop) ? vv.pageTop : window.scrollY || window.pageYOffset || 0;
+    el.style.position = "absolute";
+    el.style.top = `${Math.round(pageTop + pad)}px`;
+    el.style.right = `${pad}px`;
+    el.style.left = "auto";
+    el.style.zIndex = "400";
+  };
+
+  pin();
+  window.addEventListener("scroll", pin, { passive: true });
+  window.addEventListener("resize", pin);
+  window.visualViewport?.addEventListener("scroll", pin);
+  window.visualViewport?.addEventListener("resize", pin);
+})();
