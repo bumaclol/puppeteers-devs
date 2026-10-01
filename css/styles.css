@@ -1661,9 +1661,15 @@ img {
   }
 
   .intro p {
-    font-size: 15px;
-    text-align: left;
-    hyphens: manual;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: justify;
+    text-align-last: left;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphenate-limit-chars: 8 3 3;
+    overflow-wrap: break-word;
     margin-bottom: 20px;
   }
 
