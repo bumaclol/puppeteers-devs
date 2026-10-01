@@ -1811,13 +1811,17 @@ img {
     flex-direction: column;
     flex-wrap: nowrap;
     top: 47.6%;
-    height: 40%;
-    max-height: 40%;
+    height: 44%;
+    max-height: 44%;
     gap: 5px;
-    padding: 4px 8px 6px 6px;
+    padding: 4px 8px 8px 6px;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.55) rgba(0, 0, 0, 0.35);
   }
 
   .board-form::-webkit-scrollbar {
@@ -1854,10 +1858,10 @@ img {
   }
 
   .board-form textarea {
-    min-height: 38px;
-    height: 38px;
-    max-height: 38px;
-    flex: none;
+    min-height: 52px;
+    height: auto;
+    max-height: none;
+    flex: 1 1 auto;
     overflow-y: auto;
   }
 
@@ -1870,8 +1874,8 @@ img {
     z-index: 5;
     height: 32px;
     min-height: 32px;
-    margin-top: auto;
-    margin-bottom: 4px;
+    margin-top: 8px;
+    margin-bottom: 6px;
     flex-shrink: 0;
     letter-spacing: 0.12em;
   }
