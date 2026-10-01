@@ -1689,7 +1689,7 @@ img {
     align-items: center;
     text-align: center;
     gap: 18px;
-    padding: 22px 18px 28px;
+    padding: 22px 18px max(32px, calc(18px + env(safe-area-inset-bottom)));
   }
 
   .foot-copy {
@@ -1731,22 +1731,27 @@ img {
     display: none;
   }
 
+  .contact-col {
+    margin-top: 32px;
+    margin-bottom: 4px;
+  }
+
   .contact-stage {
-    width: 100%;
-    max-width: 400px;
+    width: 92%;
+    max-width: 360px;
   }
 
   .board-form {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    top: 44.8%;
-    height: 51%;
-    max-height: 51%;
-    gap: 6px;
-    padding: 6px 8px 10px 6px;
+    top: 47.4%;
+    height: 47%;
+    max-height: 47%;
+    gap: 5px;
+    padding: 4px 8px 8px 6px;
     overflow-x: hidden;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior: contain;
     scrollbar-gutter: stable;
@@ -1788,9 +1793,9 @@ img {
   }
 
   .board-form textarea {
-    min-height: 68px;
-    height: 68px;
-    max-height: 68px;
+    min-height: 46px;
+    height: 46px;
+    max-height: 46px;
     flex: none;
     overflow-y: auto;
   }
