@@ -1495,9 +1495,12 @@ img {
     margin: 0 auto;
   }
 
-  .game-art-wrap {
-    max-width: 280px;
-    margin: 0 auto;
+  .featured-slide {
+    padding: 0 46px;
+  }
+
+  .game-nav {
+    top: 42%;
   }
 
   .top {
@@ -1647,14 +1650,65 @@ img {
     padding: 28px 14px 24px;
   }
 
+  .featured-slide {
+    padding: 0 8px;
+  }
+
+  .game-nav {
+    top: 198px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .game-nav.prev {
+    left: 6px;
+  }
+
+  .game-nav.next {
+    right: 6px;
+  }
+
+  .store-btns {
+    justify-content: center;
+    gap: 8px;
+  }
+
   .foot {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 22px 18px 28px;
+  }
+
+  .foot-copy {
+    width: 100%;
   }
 
   .socials {
-    justify-content: flex-start;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .socials a {
+    width: 48px;
+    height: 48px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .socials svg,
+  .patreon-mark {
+    width: 22px;
+    height: 22px;
+  }
+
+  .mail {
+    justify-content: center;
+    width: 100%;
   }
 
   .lang-dd-btn {
@@ -1675,9 +1729,9 @@ img {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    top: 44.5%;
-    height: 50.5%;
-    max-height: 50.5%;
+    top: 44.8%;
+    height: 51%;
+    max-height: 51%;
     gap: 6px;
     padding: 6px 8px 10px 6px;
     overflow-x: hidden;
@@ -1716,16 +1770,16 @@ img {
   }
 
   .board-form .board-msg {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 0;
     display: flex;
     flex-direction: column;
   }
 
   .board-form textarea {
-    min-height: 96px;
-    height: 96px;
-    flex: 0 0 auto;
+    min-height: 52px;
+    height: auto;
+    flex: 1 1 auto;
     overflow-y: auto;
   }
 
