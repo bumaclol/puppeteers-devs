@@ -1673,6 +1673,15 @@ img {
   .store-btns {
     justify-content: center;
     gap: 8px;
+    margin-top: 2px;
+  }
+
+  .game-card.featured .game-copy p {
+    margin-bottom: 8px;
+  }
+
+  .game-card.featured {
+    padding-bottom: 16px;
   }
 
   .foot {
