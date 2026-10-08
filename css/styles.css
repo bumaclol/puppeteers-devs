@@ -1889,16 +1889,19 @@ img {
 
 @media (min-width: 1101px) {
   .home {
-    min-height: 0;
+    min-height: calc(100dvh - 14rem);
     align-items: start;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 10px 28px;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+  }
+
+  .game-card.featured {
+    max-width: 860px;
   }
 
   .contact-col {
     overflow: visible;
     align-self: stretch;
-    width: min(540px, 42vw);
+    width: auto;
   }
 
   .contact-stage {
@@ -1908,10 +1911,10 @@ img {
   }
 
   .contact-fit {
-    height: auto;
-    width: min(100%, 540px);
+    height: 100%;
+    width: auto;
     max-width: 100%;
-    max-height: min(100%, 680px);
+    max-height: 100%;
     aspect-ratio: 865 / 1024;
   }
 
@@ -1928,20 +1931,10 @@ img {
   }
 
   .board-form {
-    left: 12.8%;
-    top: 44.6%;
-    width: 38.4%;
-    height: 47.8%;
-    max-height: 47.8%;
-    gap: 6px;
-  }
-
-  .board-form textarea {
-    min-height: 56px;
-  }
-
-  .board-form .send {
-    height: 38px;
-    margin-top: 8px;
+    left: 13.4%;
+    top: 45.6%;
+    width: 38.6%;
+    height: 46.2%;
+    max-height: 46.2%;
   }
 }
