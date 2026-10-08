@@ -1,0 +1,3 @@
+Contact: mailto:puppeteers.devs@gmail.com
+Preferred-Languages: es, en
+Canonical: https://bumaclol.github.io/puppeteers-devs/.well-known/security.txt
