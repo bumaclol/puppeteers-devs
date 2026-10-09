@@ -1022,9 +1022,9 @@ img {
 }
 
 .board-form .board-msg {
-  flex: 1 1 auto;
+  flex: 0 1 auto;
   min-height: 0;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
@@ -1047,12 +1047,12 @@ img {
 }
 
 .board-form textarea {
-  flex: 1 1 auto;
+  flex: none;
   width: 100%;
-  min-height: 72px;
+  height: 96px;
+  min-height: 80px;
   max-width: 100%;
-  max-height: 100%;
-  height: auto;
+  max-height: 150px;
   resize: vertical;
   overflow: auto;
 }
@@ -1606,9 +1606,9 @@ img {
   }
 
   .board-form .board-msg {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .board-form h2 {
@@ -1634,10 +1634,10 @@ img {
   }
 
   .board-form textarea {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 52px;
-    max-height: 100%;
+    flex: none;
+    height: 72px;
+    min-height: 64px;
+    max-height: 120px;
     overflow-y: auto;
     resize: vertical;
   }
@@ -1887,18 +1887,18 @@ img {
   }
 
   .board-form .board-msg {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     min-height: 0;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     flex-direction: column;
   }
 
   .board-form textarea {
-    min-height: 48px;
-    height: auto;
-    max-height: 100%;
-    flex: 1 1 auto;
+    flex: none;
+    min-height: 56px;
+    height: 64px;
+    max-height: 100px;
     overflow-y: auto;
     resize: vertical;
   }
