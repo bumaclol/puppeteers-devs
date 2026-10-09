@@ -7,7 +7,7 @@
   --hl: #f4f0ea;
   --card: #100c0c;
   --foot: transparent;
-  --gutter: 5.5vw;
+  --gutter: clamp(28px, 5.5vw, 88px);
 }
 
 * {
@@ -85,15 +85,15 @@ img {
 .lang-dd-btn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-width: 128px;
-  padding: 7px 10px 7px 8px;
+  gap: 10px;
+  min-width: 154px;
+  padding: 9px 12px 9px 10px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   background: rgba(10, 8, 8, 0.78);
   color: var(--ink);
   cursor: pointer;
-  font: 500 12px/1.2 "IBM Plex Sans", system-ui, sans-serif;
+  font: 500 14px/1.2 "IBM Plex Sans", system-ui, sans-serif;
   letter-spacing: 0.04em;
   backdrop-filter: blur(14px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
@@ -140,8 +140,8 @@ img {
   right: 0;
   top: calc(100% + 8px);
   z-index: 50;
-  min-width: 188px;
-  padding: 6px;
+  min-width: 210px;
+  padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   background: rgba(12, 9, 9, 0.96);
@@ -162,13 +162,13 @@ img {
   align-items: center;
   gap: 10px;
   width: 100%;
-  padding: 8px 10px;
+  padding: 10px 12px;
   border: none;
   border-radius: 8px;
   background: transparent;
   color: #d8d0c8;
   cursor: pointer;
-  font: 500 13px/1.2 "IBM Plex Sans", system-ui, sans-serif;
+  font: 500 14px/1.2 "IBM Plex Sans", system-ui, sans-serif;
   letter-spacing: 0.02em;
   text-align: left;
   appearance: none;
@@ -204,8 +204,8 @@ img {
 }
 
 .lang-flag-ico {
-  width: 20px;
-  height: 14px;
+  width: 24px;
+  height: 17px;
   object-fit: cover;
   display: block;
   border-radius: 3px;
@@ -266,7 +266,7 @@ img {
 }
 
 .logo img {
-  width: 108px;
+  width: 128px;
   height: auto;
   display: block;
 }
@@ -289,9 +289,9 @@ img {
   background: rgba(10, 7, 7, 0.92);
   color: #f0e6de;
   font-family: "Oswald", sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
   pointer-events: none;
@@ -472,7 +472,8 @@ img {
   color: var(--muted);
   line-height: 1.45;
   font-size: clamp(18px, 1.7vw, 22px);
-  margin: 0 0 28px;
+  margin: 6px 0 32px;
+  padding-right: clamp(0px, 3vw, 36px);
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
@@ -811,13 +812,14 @@ img {
 
 .game-card.featured .game-copy {
   min-width: 0;
-  padding-right: 4px;
+  padding: 0 8px 0 4px;
 }
 
 .game-card.featured .game-copy p {
   max-width: none;
   font-size: 16px;
   line-height: 1.55;
+  margin-bottom: 16px;
 }
 
 .steam-btn {
@@ -1042,7 +1044,10 @@ img {
   flex: 1 1 auto;
   height: auto;
   min-height: 88px;
-  resize: none;
+  max-width: 100%;
+  max-height: 240px;
+  resize: both;
+  overflow: auto;
 }
 
 .board-form input:focus,
@@ -1442,7 +1447,7 @@ img {
   max-width: 560px;
 }
 
-@media (max-width: 1100px), (max-height: 680px) {
+@media (max-width: 1100px) {
   .home,
   .game-card-row,
   .game-card,
@@ -1538,12 +1543,12 @@ img {
   }
 
   .logo img {
-    width: 88px;
+    width: 104px;
   }
 
   .logo-hint {
-    font-size: 10px;
-    padding: 5px 10px;
+    font-size: 11px;
+    padding: 6px 12px;
   }
 
   .contact-col {
@@ -1621,8 +1626,9 @@ img {
     flex: 1 1 auto;
     height: auto;
     min-height: 52px;
-    max-height: none;
+    max-height: 140px;
     overflow-y: auto;
+    resize: vertical;
   }
 
   .board-form .send {
@@ -1670,7 +1676,12 @@ img {
     -webkit-hyphens: auto;
     hyphenate-limit-chars: 8 3 3;
     overflow-wrap: break-word;
-    margin-bottom: 20px;
+    margin: 4px 0 22px;
+    padding-right: 0;
+  }
+
+  .logo img {
+    width: 92px;
   }
 
   .logo-hint {
@@ -1678,7 +1689,7 @@ img {
   }
 
   .top {
-    padding-top: max(52px, calc(12px + env(safe-area-inset-top)));
+    padding-top: max(56px, calc(14px + env(safe-area-inset-top)));
   }
 
   .game-card.featured {
@@ -1795,11 +1806,16 @@ img {
 
   .lang-dd-btn {
     min-width: 0;
-    padding: 6px 8px;
+    padding: 8px 10px;
   }
 
   .lang-dd-label {
     display: none;
+  }
+
+  .lang-flag-ico {
+    width: 26px;
+    height: 18px;
   }
 
   .contact-col {
@@ -1866,9 +1882,10 @@ img {
   .board-form textarea {
     min-height: 52px;
     height: auto;
-    max-height: none;
+    max-height: 96px;
     flex: 1 1 auto;
     overflow-y: auto;
+    resize: vertical;
   }
 
   .board-form input {
