@@ -481,12 +481,14 @@ img {
   margin: 0;
   padding-right: clamp(0px, 3vw, 36px);
   text-align: justify;
+  text-align-last: justify;
   text-justify: inter-word;
   hyphens: auto;
 }
 
 .hero-lead p + p {
   margin-top: 10px;
+  text-align-last: left;
 }
 
 .hero-lead p:last-child {
