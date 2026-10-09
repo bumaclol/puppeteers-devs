@@ -466,8 +466,8 @@ img {
 .hero-lead {
   grid-column: 1;
   grid-row: 3;
-  max-width: none;
   width: 100%;
+  max-width: 38em;
 }
 
 .intro p,
@@ -476,24 +476,24 @@ img {
   max-width: none;
   width: 100%;
   color: var(--muted);
-  line-height: 1.45;
+  line-height: 1.55;
   font-size: clamp(18px, 1.7vw, 22px);
   margin: 0;
-  padding-right: clamp(0px, 3vw, 36px);
+  padding-right: 0;
   text-align: justify;
-  text-align-last: justify;
+  text-align-last: left;
   text-justify: inter-word;
   hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 8 3 3;
 }
 
 .hero-lead p + p {
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 .hero-lead p:last-child {
   margin-bottom: 32px;
-  text-align: left;
-  text-align-last: left;
 }
 
 .game-card {
