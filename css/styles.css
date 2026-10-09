@@ -876,22 +876,8 @@ img {
 .steam-btn.press-kit-btn:visited,
 .game-card.featured .steam-btn.press-kit-btn:visited,
 .store-links a.press-kit-link:visited {
-  border: 1px solid var(--red);
+  border: 1px solid rgba(255, 255, 255, 0.88);
   color: inherit;
-  outline: none;
-  box-shadow: none;
-  text-shadow: none;
-  filter: none;
-}
-
-.steam-btn.press-kit-btn:hover,
-.game-card.featured .steam-btn.press-kit-btn:hover,
-.store-links a.press-kit-link:hover {
-  border-color: var(--red);
-  color: inherit;
-  box-shadow: none;
-  text-shadow: none;
-  filter: none;
 }
 
 .store-links a.press-kit-link {
@@ -1059,10 +1045,10 @@ img {
 
 .board-form textarea {
   flex: 0 1 auto;
-  height: 88px;
-  min-height: 72px;
+  height: 120px;
+  min-height: 88px;
   max-width: 100%;
-  max-height: 220px;
+  max-height: 70vh;
   resize: vertical;
   overflow: auto;
 }
@@ -1909,7 +1895,7 @@ img {
   .board-form textarea {
     min-height: 52px;
     height: auto;
-    max-height: 96px;
+    max-height: 50vh;
     flex: 1 1 auto;
     overflow-y: auto;
     resize: vertical;
@@ -1979,7 +1965,9 @@ img {
     left: 13.2%;
     top: 45.2%;
     width: 38.8%;
-    height: 47%;
-    max-height: 47%;
+    height: auto;
+    min-height: 47%;
+    max-height: none;
+    overflow: visible;
   }
 }
