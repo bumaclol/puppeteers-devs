@@ -27,7 +27,9 @@ const i18n = {
     "hero.we": "WE ARE",
     "hero.title": "WE ARE PUPPETEERS DEVS.",
     "hero.lead":
-      "We are Puppeteers, an independent game development studio based in Chile. We create dark-themed experiences where puppets are at the core of our stories.",
+      "We are Puppeteers, an independent game development studio based in Chile.",
+    "hero.lead2":
+      "We create dark-themed experiences where puppets are at the core of our stories.",
     "latest.label": "OUR GAMES",
     "game.status": "coming soon",
     "game.wishlist": "WISHLIST ON STEAM",
@@ -68,7 +70,9 @@ const i18n = {
     "hero.we": "SOMOS",
     "hero.title": "SOMOS PUPPETEERS DEVS.",
     "hero.lead":
-      "Somos Puppeteers, un estudio independiente de desarrollo de videojuegos con base en Chile. Creamos experiencias de temática oscura en las que los títeres están en el centro de nuestras historias.",
+      "Somos Puppeteers, un estudio independiente de desarrollo de videojuegos con base en Chile.",
+    "hero.lead2":
+      "Creamos experiencias de temática oscura en las que los títeres están en el centro de nuestras historias.",
     "latest.label": "NUESTROS JUEGOS",
     "game.status": "próximamente",
     "game.wishlist": "WISHLIST EN STEAM",
@@ -109,7 +113,9 @@ i18n.de = Object.assign({}, i18n.en, {
   "nav.contact": "KONTAKT",
   "hero.we": "WIR SIND",
   "hero.lead":
-    "Wir sind Puppeteers, ein unabhängiges Spieleentwicklungsstudio aus Chile. Wir erschaffen düstere Erlebnisse, in denen Puppen im Zentrum unserer Geschichten stehen.",
+    "Wir sind Puppeteers, ein unabhängiges Spieleentwicklungsstudio aus Chile.",
+  "hero.lead2":
+    "Wir erschaffen düstere Erlebnisse, in denen Puppen im Zentrum unserer Geschichten stehen.",
   "latest.label": "UNSERE SPIELE",
   "game.status": "demnächst",
   "game.wishlist": "WUNSCHLISTE AUF STEAM",
@@ -142,7 +148,9 @@ i18n.fr = Object.assign({}, i18n.en, {
   "nav.contact": "CONTACT",
   "hero.we": "NOUS SOMMES",
   "hero.lead":
-    "Nous sommes Puppeteers, un studio indépendant de jeux vidéo basé au Chili. Nous créons des expériences sombres où les marionnettes sont au cœur de nos histoires.",
+    "Nous sommes Puppeteers, un studio indépendant de jeux vidéo basé au Chili.",
+  "hero.lead2":
+    "Nous créons des expériences sombres où les marionnettes sont au cœur de nos histoires.",
   "latest.label": "NOS JEUX",
   "game.status": "bientôt",
   "game.wishlist": "LISTE DE SOUHAITS STEAM",
@@ -175,7 +183,9 @@ i18n.it = Object.assign({}, i18n.en, {
   "nav.contact": "CONTATTI",
   "hero.we": "SIAMO",
   "hero.lead":
-    "Siamo Puppeteers, uno studio indipendente di videogiochi con sede in Cile. Creiamo esperienze oscure in cui le marionette sono al centro delle nostre storie.",
+    "Siamo Puppeteers, uno studio indipendente di videogiochi con sede in Cile.",
+  "hero.lead2":
+    "Creiamo esperienze oscure in cui le marionette sono al centro delle nostre storie.",
   "latest.label": "I NOSTRI GIOCHI",
   "game.status": "prossimamente",
   "game.wishlist": "WISHLIST SU STEAM",
@@ -208,7 +218,9 @@ i18n.ja = Object.assign({}, i18n.en, {
   "nav.contact": "お問い合わせ",
   "hero.we": "私たちは",
   "hero.lead":
-    "私たちはチリを拠点とするインディーゲームスタジオ、Puppeteersです。人形を物語の中心に据えた、暗いテーマの体験をつくります。",
+    "私たちはチリを拠点とするインディーゲームスタジオ、Puppeteersです。",
+  "hero.lead2":
+    "人形を物語の中心に据えた、暗いテーマの体験をつくります。",
   "latest.label": "ゲーム",
   "game.status": "近日公開",
   "game.wishlist": "STEAMでウィッシュリスト",
@@ -241,7 +253,9 @@ i18n.pt = Object.assign({}, i18n.es, {
   "nav.contact": "CONTATO",
   "hero.we": "SOMOS",
   "hero.lead":
-    "Somos a Puppeteers, um estúdio independente de jogos baseado no Chile. Criamos experiências escuras em que os fantoches estão no centro das nossas histórias.",
+    "Somos a Puppeteers, um estúdio independente de jogos baseado no Chile.",
+  "hero.lead2":
+    "Criamos experiências escuras em que os fantoches estão no centro das nossas histórias.",
   "latest.label": "NOSSOS JOGOS",
   "game.status": "em breve",
   "game.wishlist": "WISHLIST NA STEAM",

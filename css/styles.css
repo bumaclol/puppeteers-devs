@@ -463,20 +463,34 @@ img {
   margin-left: 0.16em;
 }
 
-.intro p,
-.lead {
+.hero-lead {
   grid-column: 1;
   grid-row: 3;
+  max-width: none;
+  width: 100%;
+}
+
+.intro p,
+.lead,
+.hero-lead p {
   max-width: none;
   width: 100%;
   color: var(--muted);
   line-height: 1.45;
   font-size: clamp(18px, 1.7vw, 22px);
-  margin: 6px 0 32px;
+  margin: 0;
   padding-right: clamp(0px, 3vw, 36px);
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+}
+
+.hero-lead p + p {
+  margin-top: 10px;
+}
+
+.hero-lead p:last-child {
+  margin-bottom: 32px;
 }
 
 .game-card {
@@ -1475,6 +1489,7 @@ img {
   }
 
   .hero-title,
+  .hero-lead,
   .intro p,
   .game-card.featured,
   .contact-col {
@@ -1666,7 +1681,8 @@ img {
     width: 100%;
   }
 
-  .intro p {
+  .intro p,
+  .hero-lead p {
     font-size: 16px;
     line-height: 1.5;
     text-align: justify;
@@ -1676,8 +1692,16 @@ img {
     -webkit-hyphens: auto;
     hyphenate-limit-chars: 8 3 3;
     overflow-wrap: break-word;
-    margin: 4px 0 22px;
+    margin: 0;
     padding-right: 0;
+  }
+
+  .hero-lead p + p {
+    margin-top: 8px;
+  }
+
+  .hero-lead p:last-child {
+    margin-bottom: 22px;
   }
 
   .logo img {
