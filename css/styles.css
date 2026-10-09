@@ -978,6 +978,7 @@ img {
   top: 45.6%;
   width: 38.6%;
   height: 46.2%;
+  max-height: 46.2%;
   margin: 0;
   padding: 4px 8px 8px 6px;
   display: flex;
@@ -988,6 +989,7 @@ img {
   box-shadow: none;
   z-index: 2;
   pointer-events: auto;
+  overflow: hidden;
 }
 
 .board-form h2 {
@@ -1022,6 +1024,7 @@ img {
 .board-form .board-msg {
   flex: 1 1 auto;
   min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -1044,11 +1047,12 @@ img {
 }
 
 .board-form textarea {
-  flex: 0 1 auto;
-  height: 110px;
-  min-height: 88px;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 72px;
   max-width: 100%;
-  max-height: 180px;
+  max-height: 100%;
+  height: auto;
   resize: vertical;
   overflow: auto;
 }
@@ -1068,6 +1072,11 @@ img {
   padding: 0;
   font-size: clamp(12px, 1.2vw, 14px);
   background: rgba(8, 4, 4, 0.35);
+  flex-shrink: 0;
+}
+
+.board-form h2,
+.board-form label:not(.board-msg) {
   flex-shrink: 0;
 }
 
@@ -1593,15 +1602,13 @@ img {
     bottom: auto;
     gap: 4px;
     padding: 2px 7px 8px 6px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.5) rgba(0, 0, 0, 0.35);
+    overflow: hidden;
   }
 
   .board-form .board-msg {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 0;
+    overflow: hidden;
   }
 
   .board-form h2 {
@@ -1630,7 +1637,7 @@ img {
     flex: 1 1 auto;
     height: auto;
     min-height: 52px;
-    max-height: 140px;
+    max-height: 100%;
     overflow-y: auto;
     resize: vertical;
   }
@@ -1850,13 +1857,7 @@ img {
     max-height: 44%;
     gap: 5px;
     padding: 4px 8px 8px 6px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior: contain;
-    scrollbar-gutter: stable;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.55) rgba(0, 0, 0, 0.35);
+    overflow: hidden;
   }
 
   .board-form::-webkit-scrollbar {
@@ -1886,16 +1887,17 @@ img {
   }
 
   .board-form .board-msg {
-    flex: 0 0 auto;
+    flex: 1 1 auto;
     min-height: 0;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
   }
 
   .board-form textarea {
-    min-height: 52px;
+    min-height: 48px;
     height: auto;
-    max-height: 96px;
+    max-height: 100%;
     flex: 1 1 auto;
     overflow-y: auto;
     resize: vertical;

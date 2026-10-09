@@ -631,3 +631,30 @@ applyLang();
     });
   });
 })();
+
+(function limitMessageBox() {
+  const form = document.getElementById("contactForm");
+  const area = form?.querySelector('textarea[name="message"]');
+  const wrap = form?.querySelector(".board-msg");
+  if (!area || !wrap) return;
+
+  const capSize = () => {
+    const label = wrap.querySelector("span");
+    const cap = Math.max(64, wrap.clientHeight - (label ? label.offsetHeight + 10 : 10));
+    area.style.maxHeight = `${Math.floor(cap)}px`;
+    if (area.offsetHeight > cap + 1) {
+      area.style.height = `${Math.floor(cap)}px`;
+    }
+  };
+
+  ["pointerup", "mouseup", "input"].forEach((evt) => {
+    area.addEventListener(evt, capSize);
+  });
+  window.addEventListener("resize", capSize);
+  if (window.ResizeObserver) {
+    const observer = new ResizeObserver(capSize);
+    observer.observe(wrap);
+    observer.observe(area);
+  }
+  capSize();
+})();
