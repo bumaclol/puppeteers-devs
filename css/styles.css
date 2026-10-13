@@ -467,7 +467,7 @@ img {
   grid-column: 1;
   grid-row: 3;
   width: 100%;
-  max-width: 38em;
+  max-width: 1000px;
 }
 
 .intro p,
@@ -480,12 +480,9 @@ img {
   font-size: clamp(18px, 1.7vw, 22px);
   margin: 0;
   padding-right: 0;
-  text-align: justify;
-  text-align-last: left;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphenate-limit-chars: 8 3 3;
+  text-align: left;
+  text-wrap: balance;
+  hyphens: none;
 }
 
 .hero-lead p + p {
@@ -526,25 +523,39 @@ img {
 .latest-kicker-wrap {
   position: absolute;
   top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  transform: none;
   z-index: 5;
-  width: max-content;
-  max-width: calc(100% - 80px);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
   margin: 0;
+  padding: 0 40px;
+  pointer-events: none;
   text-align: center;
 }
 
-.latest-kicker {
-  display: inline-block;
-  width: max-content !important;
+.intro p.latest-kicker,
+p.latest-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
   margin: 0;
-  padding: 10px 28px 9px 34px;
+  padding: 10px 28px;
+  pointer-events: auto;
   text-align: center;
+  text-wrap: nowrap;
+  hyphens: none;
   font-family: "Oswald", sans-serif;
   font-weight: 600;
-  letter-spacing: 0.2em;
   font-size: clamp(18px, 2.2vw, 26px);
+  line-height: 1.1;
+  letter-spacing: 0;
   color: #f4ece3;
   background:
     linear-gradient(180deg, rgba(22, 14, 12, 0.96), rgba(6, 4, 4, 0.96));
@@ -552,6 +563,13 @@ img {
   box-shadow:
     0 3px 14px rgba(0, 0, 0, 0.55),
     inset 0 1px 0 rgba(255, 240, 210, 0.12);
+}
+
+.latest-kicker span {
+  display: block;
+  letter-spacing: 0.2em;
+  margin-right: -0.2em;
+  text-align: center;
 }
 
 .game-card-row {
@@ -1022,7 +1040,7 @@ img {
 }
 
 .board-form .board-msg {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   min-height: 0;
   overflow: visible;
   display: flex;
@@ -1047,13 +1065,13 @@ img {
 }
 
 .board-form textarea {
-  flex: none;
+  flex: 1 1 auto;
   width: 100%;
-  height: 96px;
-  min-height: 80px;
+  height: 132px;
+  min-height: 132px;
   max-width: 100%;
-  max-height: 150px;
-  resize: vertical;
+  max-height: 132px;
+  resize: none;
   overflow: auto;
 }
 
@@ -1636,10 +1654,10 @@ img {
   .board-form textarea {
     flex: none;
     height: 72px;
-    min-height: 64px;
-    max-height: 120px;
+    min-height: 72px;
+    max-height: 72px;
     overflow-y: auto;
-    resize: vertical;
+    resize: none;
   }
 
   .board-form .send {
@@ -1723,10 +1741,16 @@ img {
     max-width: calc(100% - 16px);
   }
 
-  .latest-kicker {
+  .intro p.latest-kicker,
+  p.latest-kicker {
     font-size: 13px;
-    padding: 8px 14px 7px 16px;
+    padding: 8px 16px;
+    letter-spacing: 0;
+  }
+
+  .latest-kicker span {
     letter-spacing: 0.14em;
+    margin-right: -0.14em;
   }
 
   .game-card.featured .game-art {
@@ -1896,11 +1920,11 @@ img {
 
   .board-form textarea {
     flex: none;
-    min-height: 56px;
+    min-height: 64px;
     height: 64px;
-    max-height: 100px;
+    max-height: 64px;
     overflow-y: auto;
-    resize: vertical;
+    resize: none;
   }
 
   .board-form input {
@@ -1929,6 +1953,27 @@ img {
 
   .game-card.featured {
     max-width: 1000px;
+  }
+
+  .game-card.featured .game-card-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    width: 100%;
+  }
+
+  .game-card.featured .game-copy {
+    flex: 0 1 360px;
+    max-width: 360px;
+    width: auto;
+    text-align: center;
+  }
+
+  .game-card.featured .wishlist,
+  .game-card.featured .store-btns {
+    justify-content: center;
   }
 
   .contact-col {
@@ -1967,8 +2012,20 @@ img {
     left: 13.2%;
     top: 45.2%;
     width: 38.8%;
-    height: 47%;
-    max-height: 47%;
+    height: 49%;
+    max-height: 49%;
     overflow: hidden;
+  }
+
+  .board-form .board-msg {
+    flex: 1 1 auto;
+  }
+
+  .board-form textarea {
+    flex: 1 1 auto;
+    height: 100%;
+    min-height: 0;
+    max-height: none;
+    resize: none;
   }
 }
