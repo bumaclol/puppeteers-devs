@@ -1973,7 +1973,7 @@ p.latest-kicker {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 22px;
     width: 100%;
   }
@@ -1982,6 +1982,7 @@ p.latest-kicker {
     flex: 0 1 360px;
     max-width: 360px;
     width: auto;
+    padding-top: 18px;
     text-align: center;
   }
 
