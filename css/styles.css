@@ -1969,16 +1969,21 @@ p.latest-kicker {
     max-width: 1000px;
   }
 
+  .game-card.featured .featured-slide {
+    padding-bottom: 52px;
+  }
+
   .game-card.featured .game-card-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 22px;
     width: 100%;
   }
 
   .game-card.featured .game-copy {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1990,18 +1995,25 @@ p.latest-kicker {
     text-align: center;
   }
 
-  .game-card.featured .game-copy h2 {
-    margin: 0;
+  .game-card.featured .game-copy:has(.store-btns) h2 {
+    order: 2;
+    margin-top: auto;
+    margin-bottom: 0;
     flex-shrink: 0;
   }
 
-  .game-card.featured .game-copy p {
-    margin-top: 12px;
-    margin-bottom: 0;
+  .game-card.featured .game-copy:has(.store-btns) p {
+    order: 1;
+    margin-top: 0;
+    margin-bottom: 12px;
   }
 
   .game-card.featured .store-btns {
-    margin-top: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    margin-top: 10px;
     justify-content: center;
   }
 
