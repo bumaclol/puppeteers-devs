@@ -494,7 +494,7 @@ img {
 }
 
 .hero-lead p + p {
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .hero-lead p:last-child {
@@ -1725,7 +1725,7 @@ p.latest-kicker {
   }
 
   .hero-lead p + p {
-    margin-top: 4px;
+    margin-top: 0;
   }
 
   .hero-lead p:last-child {
