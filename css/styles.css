@@ -1975,8 +1975,13 @@ p.latest-kicker {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    gap: 22px;
+    gap: 28px;
     width: 100%;
+  }
+
+  .game-card.featured .game-art {
+    width: 280px;
+    height: 420px;
   }
 
   .game-card.featured .game-copy {
@@ -1986,9 +1991,9 @@ p.latest-kicker {
     flex: 0 1 440px;
     max-width: 440px;
     width: auto;
-    height: 300px;
-    padding-top: 76px;
-    padding-bottom: 44px;
+    height: 420px;
+    padding-top: 106px;
+    padding-bottom: 62px;
     text-align: center;
   }
 
