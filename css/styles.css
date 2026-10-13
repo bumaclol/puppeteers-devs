@@ -86,14 +86,14 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  min-width: 154px;
-  padding: 9px 12px 9px 10px;
+  min-width: 168px;
+  padding: 10px 14px 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   background: rgba(10, 8, 8, 0.78);
   color: var(--ink);
   cursor: pointer;
-  font: 500 14px/1.2 "IBM Plex Sans", system-ui, sans-serif;
+  font: 500 15px/1.2 "IBM Plex Sans", system-ui, sans-serif;
   letter-spacing: 0.04em;
   backdrop-filter: blur(14px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
@@ -204,8 +204,8 @@ img {
 }
 
 .lang-flag-ico {
-  width: 24px;
-  height: 17px;
+  width: 28px;
+  height: 20px;
   object-fit: cover;
   display: block;
   border-radius: 3px;
@@ -266,7 +266,7 @@ img {
 }
 
 .logo img {
-  width: 128px;
+  width: 144px;
   height: auto;
   display: block;
 }
@@ -1556,7 +1556,7 @@ img {
   }
 
   .logo img {
-    width: 104px;
+    width: 118px;
   }
 
   .logo-hint {
@@ -1701,7 +1701,7 @@ img {
   }
 
   .logo img {
-    width: 92px;
+    width: 102px;
   }
 
   .logo-hint {
@@ -1826,7 +1826,7 @@ img {
 
   .lang-dd-btn {
     min-width: 0;
-    padding: 8px 10px;
+    padding: 10px 12px;
   }
 
   .lang-dd-label {
@@ -1834,8 +1834,8 @@ img {
   }
 
   .lang-flag-ico {
-    width: 26px;
-    height: 18px;
+    width: 30px;
+    height: 21px;
   }
 
   .contact-col {
