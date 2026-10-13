@@ -1973,19 +1973,35 @@ p.latest-kicker {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     gap: 22px;
     width: 100%;
   }
 
   .game-card.featured .game-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     flex: 0 1 360px;
     max-width: 360px;
     width: auto;
+    min-height: 300px;
+    height: 300px;
     text-align: center;
   }
 
+  .game-card.featured .game-copy h2 {
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .game-card.featured .game-copy p {
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
   .game-card.featured .store-btns {
+    margin-top: auto;
     justify-content: center;
   }
 
