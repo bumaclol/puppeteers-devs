@@ -467,7 +467,7 @@ img {
   grid-column: 1;
   grid-row: 3;
   width: 100%;
-  max-width: 1000px;
+  max-width: 34em;
 }
 
 .intro p,
@@ -480,8 +480,10 @@ img {
   font-size: clamp(18px, 1.7vw, 22px);
   margin: 0;
   padding-right: 0;
-  text-align: left;
-  text-wrap: balance;
+  text-align: justify;
+  text-align-last: justify;
+  text-justify: inter-word;
+  text-wrap: pretty;
   hyphens: none;
 }
 
@@ -1700,7 +1702,7 @@ p.latest-kicker {
     font-size: 16px;
     line-height: 1.5;
     text-align: justify;
-    text-align-last: left;
+    text-align-last: justify;
     text-justify: inter-word;
     hyphens: auto;
     -webkit-hyphens: auto;
