@@ -1969,51 +1969,23 @@ p.latest-kicker {
     max-width: 1000px;
   }
 
-  .game-card.featured .featured-slide {
-    padding-bottom: 52px;
-  }
-
   .game-card.featured .game-card-row {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 22px;
     width: 100%;
   }
 
   .game-card.featured .game-copy {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     flex: 0 1 360px;
     max-width: 360px;
     width: auto;
-    min-height: 300px;
-    height: 300px;
     text-align: center;
   }
 
-  .game-card.featured .game-copy:has(.store-btns) h2 {
-    order: 2;
-    margin-top: auto;
-    margin-bottom: 0;
-    flex-shrink: 0;
-  }
-
-  .game-card.featured .game-copy:has(.store-btns) p {
-    order: 1;
-    margin-top: 0;
-    margin-bottom: 12px;
-  }
-
   .game-card.featured .store-btns {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
-    margin-top: 10px;
     justify-content: center;
   }
 
