@@ -1986,7 +1986,12 @@ p.latest-kicker {
     text-align: center;
   }
 
+  .game-card.featured .game-copy p {
+    margin-top: 20px;
+  }
+
   .game-card.featured .store-btns {
+    margin-top: 28px;
     justify-content: center;
   }
 
