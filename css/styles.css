@@ -832,15 +832,12 @@ p.latest-kicker {
   font-family: "Oswald", sans-serif;
   font-size: 14px;
   letter-spacing: 0.14em;
+  cursor: default;
 }
 
 .wishlist .steam-mark {
   width: 18px;
   height: 18px;
-}
-
-.wishlist:hover {
-  color: #fff;
 }
 
 .game-copy p {
@@ -1993,7 +1990,7 @@ p.latest-kicker {
     text-align: left;
   }
 
-  .game-card.featured .game-copy:has(.store-btns) p {
+  .game-card.featured .game-copy:has(.store-btns) > p:not(.wishlist) {
     margin-top: auto;
     margin-bottom: 0;
   }
