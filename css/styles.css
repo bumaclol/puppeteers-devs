@@ -449,6 +449,7 @@ img {
 .hero-copy {
   grid-column: 1;
   grid-row: 2 / 4;
+  justify-self: start;
   width: max-content;
   max-width: 100%;
 }
@@ -470,7 +471,8 @@ img {
 }
 
 .hero-lead {
-  width: 100%;
+  width: 0;
+  min-width: 100%;
   max-width: none;
 }
 
