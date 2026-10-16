@@ -1958,12 +1958,12 @@ p.latest-kicker {
   .home {
     min-height: calc(100dvh - 14rem);
     align-items: start;
-    grid-template-columns: minmax(0, 1.22fr) minmax(0, 1.18fr);
+    grid-template-columns: minmax(0, 1000px) minmax(0, 1fr);
     gap: 10px 24px;
   }
 
   .game-card.featured {
-    max-width: none;
+    max-width: 1000px;
     width: 100%;
   }
 
@@ -1981,7 +1981,7 @@ p.latest-kicker {
     flex-direction: column;
     align-items: flex-start;
     flex: 1 1 auto;
-    max-width: none;
+    max-width: 32em;
     width: auto;
     min-width: 0;
     height: 300px;
