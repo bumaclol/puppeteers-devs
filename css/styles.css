@@ -436,7 +436,9 @@ img {
   padding: 8px 0 24px var(--gutter);
   align-items: stretch;
   flex: 1 0 auto;
-  min-height: calc(100dvh - 13rem);
+  width: 100%;
+  max-width: 1680px;
+  min-height: min(calc(100dvh - 13rem), 980px);
   overflow: visible;
   position: relative;
   z-index: 1;
@@ -1956,9 +1958,9 @@ p.latest-kicker {
 
 @media (min-width: 1101px) {
   .home {
-    min-height: calc(100dvh - 14rem);
+    min-height: min(calc(100dvh - 14rem), 980px);
     align-items: start;
-    grid-template-columns: minmax(0, 1000px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
     gap: 10px 24px;
   }
 
