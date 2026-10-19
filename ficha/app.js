@@ -44,6 +44,13 @@
     localStorage.setItem(STORE, JSON.stringify(fichas));
   }
 
+  function today() {
+    const now = new Date();
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    return `${now.getFullYear()}-${month}-${day}`;
+  }
+
   function fecha(iso) {
     const parts = String(iso || "").split("-");
     if (parts.length !== 3) return iso || "";
@@ -290,7 +297,7 @@
     const made = analyze(source, {
       name: nameInput.value.trim() || "Sin nombre",
       author: authorInput.value.trim(),
-      at: new Date().toISOString().slice(0, 10),
+      at: today(),
     });
     made.id = made.hash.slice(0, 12);
     adopt(made);
@@ -312,7 +319,7 @@
       const made = analyze(source, {
         name: "Sitio Puppeteers",
         author: "",
-        at: new Date().toISOString().slice(0, 10),
+        at: today(),
       });
       made.id = "sitio";
       sitio = made;
