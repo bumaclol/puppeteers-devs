@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ficha — registro de programas</title>
+    <meta
+      name="description"
+      content="Ficha lee el texto de un programa y muestra qué hosts nombra, qué guarda y el hash de esa versión."
+    />
+    <meta property="og:title" content="Ficha" />
+    <meta
+      property="og:description"
+      content="Pegá un programa y mirá qué hosts nombra, qué guarda y el hash de esa versión."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bumaclol.github.io/puppeteers-devs/ficha/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ficha" />
+    <meta
+      name="twitter:description"
+      content="Pegá un programa y mirá qué hosts nombra, qué guarda y el hash de esa versión."
+    />
+    <link rel="canonical" href="https://bumaclol.github.io/puppeteers-devs/ficha/" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self'; img-src 'self'"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,500;1,6..72,450&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div>
+        <p class="mark">Ficha</p>
+        <h1>Registro de programas</h1>
+      </div>
+      <p class="lede">Lee el texto. No lo ejecuta. La ficha vale para esa versión: fecha, hash, hosts y citas.</p>
+    </header>
+
+    <main class="layout">
+      <section class="desk" aria-label="Armar una ficha">
+        <form id="composer">
+          <label>
+            Nombre
+            <input id="name" name="name" type="text" maxlength="80" placeholder="Cuotas del club" required />
+          </label>
+          <label>
+            Lo que dice el autor
+            <input id="author" name="author" type="text" maxlength="180" placeholder="Opcional" />
+          </label>
+          <label class="source-label">
+            Programa
+            <textarea id="source" name="source" maxlength="200000" spellcheck="false" placeholder="Pegá el código" required></textarea>
+          </label>
+          <div class="actions">
+            <button type="submit">Fichar</button>
+            <button type="button" id="example" class="ghost">Cargar un ejemplo</button>
+          </div>
+          <p class="hint" id="hint" role="status"></p>
+        </form>
+        <ul id="shelf" class="shelf" aria-label="Fichas del registro"></ul>
+      </section>
+      <article id="card" class="card" aria-live="polite"></article>
+    </main>
+
+    <footer class="foot">
+      <p>SHA-256 del texto. Si el programa cambia, la ficha anterior no le sirve.</p>
+    </footer>
+    <script src="analyze.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
