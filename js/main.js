@@ -55,7 +55,7 @@ const i18n = {
     "legal.termsTitle": "Terms of use",
     "legal.privacyTitle": "Privacy policy",
     "legal.updated": "Last updated: October 2026.",
-    "gallery.title": "Gallery",
+    "legal.back": "BACK",
     "games.title": "OUR GAMES",
     "games.lead": "Things we built. Things that still twitch.",
     "devlogs.title": "DEVLOGS",
@@ -104,7 +104,7 @@ const i18n = {
     "legal.termsTitle": "Términos de uso",
     "legal.privacyTitle": "Política de privacidad",
     "legal.updated": "Última actualización: octubre 2026.",
-    "gallery.title": "Galería",
+    "legal.back": "VOLVER",
     "games.title": "NUESTROS JUEGOS",
     "games.lead": "Cosas que construimos. Cosas que todavía se retuercen.",
     "devlogs.title": "DEVLOGS",
@@ -636,24 +636,5 @@ applyLang();
     document.querySelectorAll(".logo").forEach((btn) => {
       btn.setAttribute("aria-expanded", "false");
     });
-  });
-})();
-
-(function () {
-  const lb = document.getElementById("lightbox");
-  if (!lb) return;
-  const lbImg = lb.querySelector("img");
-  const closeBtn = lb.querySelector(".lightbox-close");
-  document.querySelectorAll(".gallery a").forEach((a) => {
-    a.addEventListener("click", (event) => {
-      event.preventDefault();
-      lbImg.src = a.getAttribute("href");
-      lbImg.alt = a.querySelector("img")?.alt || "";
-      lb.showModal();
-    });
-  });
-  closeBtn?.addEventListener("click", () => lb.close());
-  lb.addEventListener("click", (event) => {
-    if (event.target === lb) lb.close();
   });
 })();
