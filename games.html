@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=222" />
+    <link rel="stylesheet" href="css/styles.css?v=223" />
     <script>
       (function (w, d, e, u, f, l, n) {
         w[f] =
@@ -173,6 +173,28 @@
         </svg>
         puppeteers.devs@gmail.com
       </a>
+      <div class="foot-news">
+        <p class="foot-news-label" data-i18n="logo.newsletter">Suscríbete a nuestro newsletter</p>
+        <form class="newsletter-form">
+          <input type="hidden" name="ml-submit" value="1" />
+          <input type="hidden" name="anticsrf" value="true" />
+          <input
+            type="email"
+            name="fields[email]"
+            required
+            autocomplete="email"
+            maxlength="120"
+            data-i18n-placeholder="newsletter.placeholder"
+            placeholder="Tu correo"
+          />
+          <button class="send newsletter-send" type="submit">
+            <span data-i18n="newsletter.send">SUSCRIBIRSE</span>
+          </button>
+        </form>
+        <p class="ok newsletter-ok" hidden data-i18n="newsletter.ok">
+          Listo, ya estás dentro. Te avisamos cuando haya novedades.
+        </p>
+      </div>
       <nav class="foot-legal">
         <a href="legal.html#terminos" data-i18n="footer.terms">Términos de uso</a>
         <span aria-hidden="true">·</span>
@@ -180,6 +202,6 @@
       </nav>
     </footer>
     </div>
-    <script src="js/main.js?v=51"></script>
+    <script src="js/main.js?v=52"></script>
   </body>
 </html>

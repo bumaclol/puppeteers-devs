@@ -595,7 +595,7 @@ document.getElementById("contactForm")?.addEventListener("submit", async (event)
 const NEWSLETTER_ACTION = "https://dashboard.mailerlite.com/jsonp/2624441/forms/198109099129308839/subscribe";
 
 document.querySelectorAll(".newsletter-form").forEach((form) => {
-  const box = form.closest(".newsletter, .logo-pop");
+  const box = form.closest(".newsletter, .logo-pop, .foot-news");
   const need = box?.querySelector(".newsletter-need");
   const ok = box?.querySelector(".newsletter-ok");
 
