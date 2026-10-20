@@ -1155,7 +1155,7 @@ p.latest-kicker {
 }
 
 .board-form .send {
-  position: static;
+  position: relative;
   left: auto;
   top: auto;
   width: 100%;
@@ -1165,6 +1165,8 @@ p.latest-kicker {
   font-size: clamp(12px, 1.2vw, 14px);
   background: rgba(8, 4, 4, 0.35);
   flex-shrink: 0;
+  overflow: hidden;
+  isolation: isolate;
 }
 
 .board-form h2,
