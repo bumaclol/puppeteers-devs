@@ -2147,10 +2147,15 @@ p.latest-kicker {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px 10px;
-  margin-top: 4px;
-  font-size: 12px;
+  margin-top: 8px;
+  font-size: 13px;
   letter-spacing: 0.04em;
-  color: #9a9086;
+  color: #cfc4b8;
+}
+
+.home-gallery {
+  margin: 8px var(--gutter) 36px;
+  max-width: none;
 }
 
 .foot-legal a:hover,
