@@ -1185,8 +1185,26 @@ p.latest-kicker {
 
 .board-form.is-sent label,
 .board-form.is-sent .send,
-.board-form.is-sent .err {
+.board-form.is-sent .err,
+.board-form.is-banned label,
+.board-form.is-banned .send,
+.board-form.is-banned .err:not(.form-ban) {
   display: none !important;
+}
+
+.board-form .form-ban {
+  display: none !important;
+}
+
+.board-form.is-banned .form-ban {
+  flex: 1 1 auto;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  color: #efe8e0;
+  line-height: 1.35;
 }
 
 .board-form.is-sent .form-ok {

@@ -48,6 +48,7 @@ const i18n = {
     "contact.ok": "Message sent!",
     "contact.okNext": "We will contact you in the coming days.",
     "contact.err": "Could not send. Please try again.",
+    "contact.banned": "This form is blocked on this device because it was used incorrectly.",
     "footer.made": "Page created by",
     "footer.terms": "Terms of use",
     "footer.privacy": "Privacy policy",
@@ -97,6 +98,7 @@ const i18n = {
     "contact.ok": "¡Mensaje enviado!",
     "contact.okNext": "Te contactaremos en los próximos días.",
     "contact.err": "No se pudo enviar. Inténtalo de nuevo.",
+    "contact.banned": "Este formulario está bloqueado en este dispositivo por uso indebido.",
     "footer.made": "Página creada por",
     "footer.terms": "Términos de uso",
     "footer.privacy": "Política de privacidad",
@@ -410,8 +412,71 @@ function applyLang() {
 */
 const CONTACT_MAIL = "puppeteers.devs@gmail.com";
 const CONTACT_ACCESS_KEY = "0ccc3c55-4fa7-47cc-b2bb-3f7d49530a99";
+const CONTACT_BAN_KEY = "pd-contact-ban";
+const CONTACT_SENDS_KEY = "pd-contact-sends";
+const CONTACT_FAILS_KEY = "pd-contact-fails";
+const HOUR = 60 * 60 * 1000;
+const DAY = 24 * HOUR;
 let lastContactAt = 0;
 let contactSentTimer = 0;
+
+function readTimes(key, maxAge) {
+  try {
+    const now = Date.now();
+    return JSON.parse(localStorage.getItem(key) || "[]").filter((stamp) => now - stamp < maxAge);
+  } catch {
+    return [];
+  }
+}
+
+function contactBanUntil() {
+  const until = Number(localStorage.getItem(CONTACT_BAN_KEY) || 0);
+  return until > Date.now() ? until : 0;
+}
+
+function applyContactBan() {
+  const form = document.getElementById("contactForm");
+  if (!form) return;
+  const banned = contactBanUntil() > 0;
+  form.classList.toggle("is-banned", banned);
+  const ban = document.getElementById("formBan");
+  if (ban) ban.hidden = !banned;
+  form.querySelectorAll("input:not(.hp), textarea, button").forEach((el) => {
+    el.disabled = banned;
+  });
+}
+
+function setContactBan(ms) {
+  const until = Date.now() + ms;
+  const current = Number(localStorage.getItem(CONTACT_BAN_KEY) || 0);
+  localStorage.setItem(CONTACT_BAN_KEY, String(Math.max(current, until)));
+  applyContactBan();
+}
+
+function noteContactSend() {
+  const now = Date.now();
+  const list = readTimes(CONTACT_SENDS_KEY, DAY);
+  list.push(now);
+  localStorage.setItem(CONTACT_SENDS_KEY, JSON.stringify(list));
+  if (list.length >= 3) setContactBan(Math.max(HOUR, DAY - (now - list[0])));
+}
+
+function noteContactFail() {
+  const now = Date.now();
+  const list = readTimes(CONTACT_FAILS_KEY, 20 * 60 * 1000);
+  list.push(now);
+  localStorage.setItem(CONTACT_FAILS_KEY, JSON.stringify(list));
+  if (list.length >= 8) setContactBan(HOUR);
+}
+
+function contactLooksWrong(name, email, message) {
+  const blob = `${name}\n${email}\n${message}`;
+  const links = blob.match(/https?:\/\/|\bwww\./gi) || [];
+  if (links.length >= 3) return true;
+  if (/(.)\1{16,}/.test(message)) return true;
+  if (message.toLowerCase() === name.toLowerCase()) return true;
+  return /(viagra|crypto\s*pump|seo\s*service|buy\s*followers|casino\s*bonus)/i.test(blob);
+}
 
 function restoreContactForm() {
   window.clearTimeout(contactSentTimer);
@@ -433,16 +498,17 @@ function showContactSent() {
   contactSentTimer = window.setTimeout(restoreContactForm, 3000);
 }
 
+applyContactBan();
+
 document.getElementById("contactForm")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const form = event.target;
-  const ok = document.getElementById("formOk");
   const err = document.getElementById("formErr");
   const btn = form.querySelector('button[type="submit"]');
   const isBot = form.querySelector('[name="botcheck"]')?.checked;
 
-  if (form.classList.contains("is-sent")) {
-    event.preventDefault();
+  if (form.classList.contains("is-sent") || form.classList.contains("is-banned") || contactBanUntil()) {
+    applyContactBan();
     return;
   }
 
@@ -450,6 +516,7 @@ document.getElementById("contactForm")?.addEventListener("submit", async (event)
   if (err) err.hidden = true;
 
   if (isBot) {
+    setContactBan(7 * DAY);
     showContactSent();
     return;
   }
@@ -459,12 +526,20 @@ document.getElementById("contactForm")?.addEventListener("submit", async (event)
   const message = cleanText(form.querySelector('[name="message"]')?.value, 2000, true);
 
   if (name.length < 2 || !isEmail(email) || message.length < 8) {
+    noteContactFail();
     if (err) err.hidden = false;
     return;
   }
 
+  if (contactLooksWrong(name, email, message)) {
+    setContactBan(DAY);
+    return;
+  }
+
   const now = Date.now();
-  if (now - lastContactAt < 15000) {
+  if (now - lastContactAt < 15000 || readTimes(CONTACT_SENDS_KEY, DAY).length >= 3) {
+    noteContactFail();
+    if (readTimes(CONTACT_SENDS_KEY, DAY).length >= 3) setContactBan(HOUR);
     if (err) err.hidden = false;
     return;
   }
@@ -499,11 +574,12 @@ document.getElementById("contactForm")?.addEventListener("submit", async (event)
       throw new Error(data.message || "send failed");
     }
     lastContactAt = Date.now();
+    noteContactSend();
     showContactSent();
   } catch (error) {
     if (err) err.hidden = false;
   } finally {
-    if (btn) btn.disabled = false;
+    if (btn && !contactBanUntil()) btn.disabled = false;
   }
 });
 
