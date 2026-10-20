@@ -692,7 +692,7 @@ applyLang();
       btn.classList.add("spark");
     });
     btn.addEventListener("animationend", (event) => {
-      if (event.animationName === "btn-sheen") btn.classList.remove("spark");
+      if (event.animationName === "logo-sheen") btn.classList.remove("spark");
     });
 
     btn.addEventListener("click", (event) => {
