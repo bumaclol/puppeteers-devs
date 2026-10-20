@@ -31,7 +31,7 @@ const i18n = {
     "hero.lead2": "",
     "latest.label": "OUR GAMES",
     "game.status": "coming soon",
-    "game.wishlist": "WISHLIST ON STEAM",
+    "game.wishlist": "IN DEVELOPMENT",
     "game.pressKit": "PRESS KIT",
     "game.viewSteam": "STEAM",
     "game.viewItch": "ITCH.IO",
@@ -49,6 +49,13 @@ const i18n = {
     "contact.okNext": "We will contact you in the coming days.",
     "contact.err": "Could not send. Please try again.",
     "footer.made": "Page created by",
+    "footer.terms": "Terms of use",
+    "footer.privacy": "Privacy policy",
+    "legal.title": "Legal",
+    "legal.termsTitle": "Terms of use",
+    "legal.privacyTitle": "Privacy policy",
+    "legal.updated": "Last updated: October 2026.",
+    "gallery.title": "Gallery",
     "games.title": "OUR GAMES",
     "games.lead": "Things we built. Things that still twitch.",
     "devlogs.title": "DEVLOGS",
@@ -73,7 +80,7 @@ const i18n = {
     "hero.lead2": "",
     "latest.label": "NUESTROS JUEGOS",
     "game.status": "próximamente",
-    "game.wishlist": "WISHLIST EN STEAM",
+    "game.wishlist": "EN DESARROLLO",
     "game.pressKit": "PRESS KIT",
     "game.viewSteam": "STEAM",
     "game.viewItch": "ITCH.IO",
@@ -91,6 +98,13 @@ const i18n = {
     "contact.okNext": "Te contactaremos en los próximos días.",
     "contact.err": "No se pudo enviar. Inténtalo de nuevo.",
     "footer.made": "Página creada por",
+    "footer.terms": "Términos de uso",
+    "footer.privacy": "Política de privacidad",
+    "legal.title": "Legal",
+    "legal.termsTitle": "Términos de uso",
+    "legal.privacyTitle": "Política de privacidad",
+    "legal.updated": "Última actualización: octubre 2026.",
+    "gallery.title": "Galería",
     "games.title": "NUESTROS JUEGOS",
     "games.lead": "Cosas que construimos. Cosas que todavía se retuercen.",
     "devlogs.title": "DEVLOGS",
@@ -115,7 +129,7 @@ i18n.de = Object.assign({}, i18n.en, {
   "hero.lead2": "",
   "latest.label": "UNSERE SPIELE",
   "game.status": "demnächst",
-  "game.wishlist": "WUNSCHLISTE AUF STEAM",
+  "game.wishlist": "IN ENTWICKLUNG",
   "game.pressKit": "PRESS KIT",
   "game.viewSteam": "STEAM",
   "game.viewItch": "ITCH.IO",
@@ -149,7 +163,7 @@ i18n.fr = Object.assign({}, i18n.en, {
   "hero.lead2": "",
   "latest.label": "NOS JEUX",
   "game.status": "bientôt",
-  "game.wishlist": "LISTE DE SOUHAITS STEAM",
+  "game.wishlist": "EN DÉVELOPPEMENT",
   "game.pressKit": "PRESS KIT",
   "game.viewSteam": "STEAM",
   "game.viewItch": "ITCH.IO",
@@ -183,7 +197,7 @@ i18n.it = Object.assign({}, i18n.en, {
   "hero.lead2": "",
   "latest.label": "I NOSTRI GIOCHI",
   "game.status": "prossimamente",
-  "game.wishlist": "WISHLIST SU STEAM",
+  "game.wishlist": "IN SVILUPPO",
   "game.pressKit": "PRESS KIT",
   "game.viewSteam": "STEAM",
   "game.viewItch": "ITCH.IO",
@@ -217,7 +231,7 @@ i18n.ja = Object.assign({}, i18n.en, {
   "hero.lead2": "",
   "latest.label": "ゲーム",
   "game.status": "近日公開",
-  "game.wishlist": "STEAMでウィッシュリスト",
+  "game.wishlist": "開発中",
   "game.pressKit": "PRESS KIT",
   "game.viewSteam": "STEAM",
   "game.viewItch": "ITCH.IO",
@@ -251,7 +265,7 @@ i18n.pt = Object.assign({}, i18n.es, {
   "hero.lead2": "",
   "latest.label": "NOSSOS JOGOS",
   "game.status": "em breve",
-  "game.wishlist": "WISHLIST NA STEAM",
+  "game.wishlist": "EM DESENVOLVIMENTO",
   "game.pressKit": "PRESS KIT",
   "game.viewSteam": "STEAM",
   "game.viewItch": "ITCH.IO",
@@ -622,5 +636,24 @@ applyLang();
     document.querySelectorAll(".logo").forEach((btn) => {
       btn.setAttribute("aria-expanded", "false");
     });
+  });
+})();
+
+(function () {
+  const lb = document.getElementById("lightbox");
+  if (!lb) return;
+  const lbImg = lb.querySelector("img");
+  const closeBtn = lb.querySelector(".lightbox-close");
+  document.querySelectorAll(".gallery a").forEach((a) => {
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      lbImg.src = a.getAttribute("href");
+      lbImg.alt = a.querySelector("img")?.alt || "";
+      lb.showModal();
+    });
+  });
+  closeBtn?.addEventListener("click", () => lb.close());
+  lb.addEventListener("click", (event) => {
+    if (event.target === lb) lb.close();
   });
 })();
