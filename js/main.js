@@ -686,6 +686,15 @@ applyLang();
     const pop = wrap.querySelector(".logo-pop");
     if (!btn || !pop) return;
 
+    btn.addEventListener("pointerdown", () => {
+      btn.classList.remove("spark");
+      void btn.offsetWidth;
+      btn.classList.add("spark");
+    });
+    btn.addEventListener("animationend", (event) => {
+      if (event.animationName === "btn-sheen") btn.classList.remove("spark");
+    });
+
     btn.addEventListener("click", (event) => {
       event.stopPropagation();
       const open = pop.hidden;
