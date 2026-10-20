@@ -302,15 +302,23 @@ img {
 .logo::after {
   content: "";
   position: absolute;
-  inset: -12%;
+  inset: 0;
   background: linear-gradient(
     115deg,
     transparent 32%,
-    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.7) 50%,
     transparent 68%
   );
   transform: translateX(-160%);
   pointer-events: none;
+  -webkit-mask-image: url("../img/logo-puppeteers.png?v=2");
+  mask-image: url("../img/logo-puppeteers.png?v=2");
+  -webkit-mask-size: 144px auto;
+  mask-size: 144px auto;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center top;
+  mask-repeat: no-repeat;
+  mask-position: center top;
 }
 
 .logo:hover img,
