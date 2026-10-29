@@ -1130,7 +1130,7 @@ p.latest-kicker {
   box-shadow: none;
   z-index: 2;
   pointer-events: auto;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .board-form h2 {
@@ -1210,8 +1210,10 @@ p.latest-kicker {
   flex-wrap: nowrap;
   gap: 4px;
   margin: 2px 0 0;
+  width: 124%;
+  max-width: none;
   font-size: clamp(8px, 0.85vw, 10.5px);
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   line-height: 1;
   color: #d8d0c8;
   white-space: nowrap;
@@ -1829,7 +1831,7 @@ p.latest-kicker {
     bottom: auto;
     gap: 4px;
     padding: 2px 7px 8px 6px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .board-form .board-msg {
@@ -2090,7 +2092,7 @@ p.latest-kicker {
     max-height: 44%;
     gap: 5px;
     padding: 4px 8px 8px 6px;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .board-form::-webkit-scrollbar {
@@ -2236,7 +2238,7 @@ p.latest-kicker {
     width: 38.8%;
     height: 49%;
     max-height: 49%;
-    overflow: hidden;
+    overflow: visible;
   }
 
   .board-form .board-msg {
