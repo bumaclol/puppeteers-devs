@@ -1203,21 +1203,27 @@ p.latest-kicker {
   border-color: var(--hl);
 }
 
-.board-agree {
+.board-form .board-agree {
   display: flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  gap: 5px;
+  gap: 4px;
   margin: 2px 0 0;
-  font-size: clamp(8px, 0.82vw, 10px);
+  font-size: clamp(6.5px, 0.68vw, 8.5px);
+  letter-spacing: -0.015em;
   line-height: 1;
   color: #d8d0c8;
   white-space: nowrap;
+  overflow: visible;
 }
 
-.board-agree > span {
+.board-form .board-agree > span,
+.board-form .board-agree span {
+  display: inline;
   white-space: nowrap;
+  font-size: inherit;
+  line-height: 1;
 }
 
 .board-agree input[type="checkbox"] {
