@@ -338,17 +338,8 @@ img {
     drop-shadow(0 0 28px rgba(255, 236, 210, 0.32));
 }
 
-.logo:active img,
-.logo.spark img {
-  filter:
-    drop-shadow(0 0 22px rgba(255, 255, 255, 0.95))
-    drop-shadow(0 0 42px rgba(255, 236, 210, 0.55));
-}
-
 .logo:hover::after,
-.logo:focus-visible::after,
-.logo:active::after,
-.logo.spark::after {
+.logo:focus-visible::after {
   animation: logo-sheen 0.55s ease;
 }
 
@@ -450,9 +441,7 @@ img {
 @media (prefers-reduced-motion: reduce) {
   .logo.shake img,
   .logo:hover::after,
-  .logo:focus-visible::after,
-  .logo:active::after,
-  .logo.spark::after {
+  .logo:focus-visible::after {
     animation: none;
   }
 
@@ -1201,10 +1190,10 @@ p.latest-kicker {
 .board-form textarea {
   flex: 1 1 auto;
   width: 100%;
-  height: 132px;
-  min-height: 132px;
+  height: 110px;
+  min-height: 110px;
   max-width: 100%;
-  max-height: 132px;
+  max-height: 110px;
   resize: none;
   overflow: auto;
 }
@@ -1212,6 +1201,35 @@ p.latest-kicker {
 .board-form input:focus,
 .board-form textarea:focus {
   border-color: var(--hl);
+}
+
+.board-agree {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+  margin: 2px 0 0;
+  font-size: clamp(9px, 0.95vw, 11px);
+  line-height: 1.3;
+  color: #d8d0c8;
+}
+
+.board-agree input[type="checkbox"] {
+  width: 13px;
+  min-width: 13px;
+  height: 13px;
+  min-height: 13px;
+  margin: 1px 0 0;
+  padding: 0;
+  flex: 0 0 auto;
+  accent-color: #d4c8bc;
+  background: rgba(4, 3, 3, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.48);
+}
+
+.board-agree a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 .board-form .send {

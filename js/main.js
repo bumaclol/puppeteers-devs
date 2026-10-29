@@ -49,6 +49,8 @@ const i18n = {
     "contact.okNext": "We will contact you in the coming days.",
     "contact.err": "Could not send. Please try again.",
     "contact.banned": "This form is blocked on this device because it was used incorrectly.",
+    "contact.agree": "I agree to the",
+    "contact.agreeAnd": "and the",
     "footer.made": "Page created by",
     "footer.terms": "Terms of use",
     "footer.privacy": "Privacy policy",
@@ -99,6 +101,8 @@ const i18n = {
     "contact.okNext": "Te contactaremos en los próximos días.",
     "contact.err": "No se pudo enviar. Inténtalo de nuevo.",
     "contact.banned": "Este formulario está bloqueado en este dispositivo por uso indebido.",
+    "contact.agree": "Estoy de acuerdo con los",
+    "contact.agreeAnd": "y la",
     "footer.made": "Página creada por",
     "footer.terms": "Términos de uso",
     "footer.privacy": "Política de privacidad",
@@ -525,7 +529,8 @@ document.getElementById("contactForm")?.addEventListener("submit", async (event)
   const email = cleanText(form.querySelector('[name="email"]')?.value, 120).toLowerCase();
   const message = cleanText(form.querySelector('[name="message"]')?.value, 2000, true);
 
-  if (name.length < 2 || !isEmail(email) || message.length < 8) {
+  const agreed = form.querySelector('[name="agree"]')?.checked;
+  if (name.length < 2 || !isEmail(email) || message.length < 8 || !agreed) {
     noteContactFail();
     if (err) err.hidden = false;
     return;
@@ -685,15 +690,6 @@ applyLang();
     const btn = wrap.querySelector(".logo");
     const pop = wrap.querySelector(".logo-pop");
     if (!btn || !pop) return;
-
-    btn.addEventListener("pointerdown", () => {
-      btn.classList.remove("spark");
-      void btn.offsetWidth;
-      btn.classList.add("spark");
-    });
-    btn.addEventListener("animationend", (event) => {
-      if (event.animationName === "logo-sheen") btn.classList.remove("spark");
-    });
 
     btn.addEventListener("click", (event) => {
       event.stopPropagation();
