@@ -1210,8 +1210,8 @@ p.latest-kicker {
   flex-wrap: nowrap;
   gap: 4px;
   margin: 2px 0 0;
-  font-size: clamp(6.5px, 0.68vw, 8.5px);
-  letter-spacing: -0.015em;
+  font-size: clamp(8px, 0.85vw, 10.5px);
+  letter-spacing: 0;
   line-height: 1;
   color: #d8d0c8;
   white-space: nowrap;
