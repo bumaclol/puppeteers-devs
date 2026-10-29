@@ -1206,12 +1206,18 @@ p.latest-kicker {
 .board-agree {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 5px;
   margin: 2px 0 0;
-  font-size: clamp(9px, 0.95vw, 11px);
-  line-height: 1.3;
+  font-size: clamp(8px, 0.82vw, 10px);
+  line-height: 1;
   color: #d8d0c8;
+  white-space: nowrap;
+}
+
+.board-agree > span {
+  white-space: nowrap;
 }
 
 .board-agree input[type="checkbox"] {
