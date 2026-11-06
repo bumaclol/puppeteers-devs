@@ -2322,6 +2322,12 @@ p.latest-kicker {
   max-width: 720px;
 }
 
+.legal .legal-date {
+  letter-spacing: 0;
+  text-align: left;
+  font-size: 13px;
+}
+
 .legal h2 {
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.08em;
