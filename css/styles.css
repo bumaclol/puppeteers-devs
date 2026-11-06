@@ -2318,8 +2318,29 @@ p.latest-kicker {
   text-decoration: underline;
 }
 
-.legal {
-  max-width: 720px;
+.page.legal {
+  max-width: none;
+  width: 100%;
+  padding: 8px var(--gutter) 56px;
+}
+
+.legal-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px 64px;
+  align-items: start;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .legal-cols {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  body:has(.legal) .top {
+    padding-top: 20px;
+    padding-bottom: 4px;
+  }
 }
 
 .legal .legal-date {
@@ -2332,7 +2353,7 @@ p.latest-kicker {
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.08em;
   font-size: 22px;
-  margin: 28px 0 10px;
+  margin: 0 0 10px;
   scroll-margin-top: 72px;
 }
 
