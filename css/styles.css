@@ -2326,10 +2326,63 @@ p.latest-kicker {
   scroll-margin-top: 72px;
 }
 
-.legal p {
+.legal h3 {
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.04em;
+  font-size: 16px;
+  margin: 22px 0 8px;
+  color: #efe8e2;
+}
+
+.legal-date {
+  color: #9a9188;
+  font-size: 13px;
+}
+
+.legal p,
+.legal li {
   color: var(--muted);
   line-height: 1.6;
+}
+
+.legal p {
   margin: 0 0 12px;
+}
+
+.legal ul {
+  margin: 0 0 14px;
+  padding-left: 1.2em;
+}
+
+.legal li {
+  margin: 0 0 6px;
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.legal-table th,
+.legal-table td {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.legal-table th {
+  color: #efe8e2;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .legal a:not(.legal-back) {
