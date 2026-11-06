@@ -402,6 +402,7 @@ function applyLang() {
   });
   localStorage.setItem("pd-lang", lang);
   renderLangSwitch();
+  applyLegalPanel();
 }
 
 /*
@@ -627,7 +628,23 @@ document.querySelectorAll(".newsletter-form").forEach((form) => {
   });
 });
 
+function applyLegalPanel() {
+  const terms = document.getElementById("terminos");
+  const privacy = document.getElementById("privacidad");
+  if (!terms || !privacy) return;
+  const showPrivacy = location.hash === "#privacidad";
+  terms.classList.toggle("is-on", !showPrivacy);
+  privacy.classList.toggle("is-on", showPrivacy);
+  document.title = showPrivacy
+    ? `${t("legal.privacyTitle")} — Puppeteers Devs`
+    : `${t("legal.termsTitle")} — Puppeteers Devs`;
+}
+
 applyLang();
+window.addEventListener("hashchange", applyLegalPanel);
+if (location.hash === "#terminos" || location.hash === "#privacidad") {
+  requestAnimationFrame(() => window.scrollTo(0, 0));
+}
 
 (function setupFeaturedCarousel() {
   const card = document.querySelector(".game-card.featured");

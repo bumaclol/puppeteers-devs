@@ -2332,8 +2332,8 @@ p.latest-kicker {
   display: none;
 }
 
-.legal-panel:target,
-.legal-cols:not(:has(:target)) .legal-panel:first-child {
+.legal-panel.is-on,
+.legal-cols:not(:has(.is-on)) .legal-panel:first-child {
   display: block;
 }
 
